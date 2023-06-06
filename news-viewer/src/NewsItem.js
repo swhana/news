@@ -34,21 +34,21 @@ const NewsItem = ({ article }) => {
   const { source, author, title, description, url, urlToImage, publishedAt, content } = article;
 
   return (
-    <NewsItemBlock>
-      {urlToImage && (
+    <>
+      {urlToImage && <NewsItemBlock>
         <div className="thumbnail">
           <a href={url} target="_blank" rel="noopener noreferrer">
             <img src={urlToImage} alt={title} />
           </a>
         </div>
-      )}
-      <div className="description">
-        <h2>
-          <a href={url} target="_blank" rel="noopener noreferrer">{title}</a>
-        </h2>
-        <p>{description}</p>
-      </div>
-    </NewsItemBlock>
+        <div className="description">
+          <h2>
+            <a href={url} target="_blank" rel="noopener noreferrer">{title}</a>
+          </h2>
+          <p>{description}</p>
+        </div>
+      </NewsItemBlock>}
+    </>
   )
 }
 
